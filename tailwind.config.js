@@ -19,6 +19,7 @@ export default {
 					darkGrayBlue: "hsl(234, 11%, 52%)",
 					darkBlue: "hsl(233, 14%, 35%)",
 				},
+				primary: "hsl(220, 98%, 61%)",
 			},
 			fontSize: {
 				DEFAULT: "18px",
@@ -26,4 +27,5 @@ export default {
 		},
 	},
 	plugins: [],
+	darkMode: "selector",
 };
