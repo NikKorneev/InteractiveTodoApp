@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: "ChampagneRegular";
+	src: url("./assets/fonts/Champagne.ttf") format(truetype);
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "ChampagneBold";
+	src: url("./assets/fonts/ChampagneBold.ttf") format(truetype);
+	font-style: normal;
+	font-weight: bold;
+}
+
+body {
+	font-family: "ChampagneRegular", sans-serif;
+}
+
+.bold {
+	font-family: "ChampagneBold", sans-serif;
+}
