@@ -6,6 +6,7 @@ export interface TodoSlice {
 	addTodo: (text: string, checked: boolean) => void;
 	removeTodo: (id: number) => void;
 	change: (id: number) => void;
+	removeAllChecked: () => void;
 }
 
 export const createTodoSlice: StateCreator<
@@ -30,5 +31,9 @@ export const createTodoSlice: StateCreator<
 					return { ...item, isChecked: !item.isChecked };
 				return item;
 			});
+		}),
+	removeAllChecked: () =>
+		set((state) => {
+			state.todos = state.todos.filter((item) => item.isChecked !== true);
 		}),
 });

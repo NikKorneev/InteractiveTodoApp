@@ -1,11 +1,14 @@
+import { useMemo } from "react";
 import { useTodoStore } from "../../store";
 import { InfoBlock } from "../InfoBlock";
 import { TodoItem } from "../TodoItem";
+import { FilterState } from "../../store/filters";
 
 function TodoItems() {
 	const items = useTodoStore((state) => state.todos);
 	const removeTodo = useTodoStore((state) => state.removeTodo);
 	const changeCheck = useTodoStore((state) => state.change);
+	const filterStore = useTodoStore((state) => state.filterState);
 
 	const handleRemoveTodo = (id: number) => {
 		return () => {
@@ -18,10 +21,22 @@ function TodoItems() {
 		};
 	};
 
+	const length = useMemo(() => {
+		return items.length;
+	}, [items]);
+
+	const filteredStore = useMemo(() => {
+		if (filterStore === FilterState["all"]) return items;
+		if (filterStore === FilterState["completed"])
+			return items.filter((item) => item.isChecked === true);
+		if (filterStore === FilterState["active"])
+			return items.filter((item) => item.isChecked !== true);
+	}, [items, filterStore]);
+
 	return (
 		<ul className="mt-[-40px] mx-5 bg-white dark:bg-dark-desaturatedBlue rounded-md overflow-hidden sm:mx-24 xl:mx-[30vw] 2xl:mt-[-80px]">
-			{items.length > 0 ? (
-				items.map((item) => (
+			{filteredStore?.length ? (
+				filteredStore?.map((item) => (
 					<TodoItem
 						key={item?.id}
 						{...item}
@@ -30,11 +45,11 @@ function TodoItems() {
 					/>
 				))
 			) : (
-				<h2 className="text-light-darkGray dark:text-dark-lightBlue text-base md:text-xl xl:text-3xl py-2 text-center text-bold">
-					Add your first Todo!
+				<h2 className="text-light-darkGray dark:text-dark-lightBlue text-base md:text-xl xl:text-2xl py-3 text-center text-bold">
+					Add your first Todo
 				</h2>
 			)}
-			<InfoBlock></InfoBlock>
+			<InfoBlock itemsLeft={length}></InfoBlock>
 		</ul>
 	);
 }

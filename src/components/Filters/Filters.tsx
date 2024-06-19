@@ -22,7 +22,7 @@ function Filters() {
 						key={item}
 						className={`${
 							filterStore === item && "text-primary"
-						} dark:hover:text-dark-lightBlueHover hover:text-dark-lightBlueHover capitalize`}
+						}  hover:text-dark-lightBlueHover capitalize`}
 						onClick={handleClick(item)}
 					>
 						{item}
