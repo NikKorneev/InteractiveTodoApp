@@ -1,12 +1,14 @@
 import { Filters } from "./components/Filters";
 import { Header } from "./components/Header";
-import { TodoItems } from "./components/TodoItems";
+// import { TodoItems } from "./components/TodoItems";
+import { DropList } from "./components/DropList";
 
 function App() {
 	return (
 		<main className="container min-h-screen sm:max-w-[100%]">
 			<Header />
-			<TodoItems />
+			<DropList />
+
 			<Filters />
 
 			<p className="px-5 mt-8 text-center text-light-darkBlueGray">

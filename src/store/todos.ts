@@ -1,12 +1,14 @@
 import { StateCreator } from "zustand";
 import { Todo } from "../types/todo";
+import { v4 as uuidv4 } from "uuid";
 
 export interface TodoSlice {
 	todos: Todo[];
 	addTodo: (text: string, checked: boolean) => void;
-	removeTodo: (id: number) => void;
-	change: (id: number) => void;
+	removeTodo: (id: Todo["id"]) => void;
+	change: (id: Todo["id"]) => void;
 	removeAllChecked: () => void;
+	setTodos: (todos: Todo[]) => void;
 }
 
 export const createTodoSlice: StateCreator<
@@ -18,7 +20,7 @@ export const createTodoSlice: StateCreator<
 	todos: [],
 	addTodo: (text, isChecked) =>
 		set((state) => {
-			state.todos.push({ text, id: Math.random(), isChecked });
+			state.todos.push({ text, id: uuidv4(), isChecked });
 		}),
 	removeTodo: (id) =>
 		set((state) => {
@@ -35,5 +37,9 @@ export const createTodoSlice: StateCreator<
 	removeAllChecked: () =>
 		set((state) => {
 			state.todos = state.todos.filter((item) => item.isChecked !== true);
+		}),
+	setTodos: (todos) =>
+		set((state) => {
+			state.todos = todos;
 		}),
 });

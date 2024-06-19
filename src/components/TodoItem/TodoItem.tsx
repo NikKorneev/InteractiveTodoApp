@@ -3,7 +3,7 @@ import CheckIcon from "../../assets/icon-check.svg?react";
 import CrossIcon from "../../assets/icon-cross.svg?react";
 import { useTheme } from "../../store/theme";
 
-type TodoItemProps = {
+export type TodoItemProps = {
 	isChecked: boolean;
 	changeCheck: () => void;
 	text: string;
