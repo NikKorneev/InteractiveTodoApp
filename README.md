@@ -1,30 +1,23 @@
-# React + TypeScript + Vite
+# React/Zustand Interactive Drag and Drop Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+It's Interactive Todo list App with theme switching and ability to reorder list by drag and drop list items.
 
-Currently, two official plugins are available:
+Challenge accepted from Frontend Mentor (https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Created with React + Typescript + Vite
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![изображение](https://github.com/NikKorneev/InteractiveTodoApp/assets/95422071/247a725d-13d1-4086-aca0-178e34312475)
+![изображение](https://github.com/NikKorneev/InteractiveTodoApp/assets/95422071/1a0951dd-4dbf-4639-91ed-21a1916abeae)
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Used libs:
+
+- [facebook/react] (https://github.com/facebook/react)
+- [microsoft/TypeScript] (https://github.com/microsoft/TypeScript)
+- [reactjs/react-transition-group](https://github.com/reactjs/react-transition-group)
+- [atlassian/react-beautiful-dnd] (https://github.com/atlassian/react-beautiful-dnd/tree/master)
+- [pmndrs/zustand] (https://github.com/pmndrs/zustand)
+
+Built with Vite [vitejs/vite] (https://github.com/vitejs/vite)
