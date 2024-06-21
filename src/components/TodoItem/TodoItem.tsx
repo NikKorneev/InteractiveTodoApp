@@ -1,7 +1,6 @@
 import { IconButton } from "@chakra-ui/react";
 import CheckIcon from "../../assets/icon-check.svg?react";
 import CrossIcon from "../../assets/icon-cross.svg?react";
-import { useTheme } from "../../store/theme";
 
 export type TodoItemProps = {
 	isChecked: boolean;
@@ -11,8 +10,6 @@ export type TodoItemProps = {
 };
 
 function TodoItem({ isChecked, text, changeCheck, deleteTodo }: TodoItemProps) {
-	const theme = useTheme((state) => state.theme);
-
 	return (
 		<li
 			className={`${
@@ -42,7 +39,7 @@ function TodoItem({ isChecked, text, changeCheck, deleteTodo }: TodoItemProps) {
 			</p>
 			<IconButton
 				aria-label="delete todo"
-				icon={<CrossIcon stroke={theme === "dark" ? "#bebebe" : ""} />}
+				icon={<CrossIcon className="dark:stroke-[#bebebe]" />}
 				background={"transparent"}
 				onClick={deleteTodo}
 			></IconButton>
