@@ -53,7 +53,7 @@ function TodoItems({ children }: ITodoItems) {
 	}, [items, filterStore]);
 
 	return (
-		<ul className="mt-[-40px] mx-5 bg-white dark:bg-dark-desaturatedBlue rounded-md overflow-hidden sm:mx-24 xl:mx-[30vw] 2xl:mt-[-80px]">
+		<ul className="transition-all mt-[-40px] mx-5 bg-white dark:bg-dark-desaturatedBlue rounded-md overflow-hidden sm:mx-24 xl:mx-[30vw] 2xl:mt-[-80px]">
 			<TransitionGroup>
 				{filteredStore?.length &&
 					filteredStore?.map((item, i) => (

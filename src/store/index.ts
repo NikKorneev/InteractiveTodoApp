@@ -10,6 +10,7 @@ export const useTodoStore = create<FilterSlice & TodoSlice>()(
 			persist(
 				(...a) => ({
 					...createFilterSlice(...a),
+					// @ts-expect-error: parameters to persist
 					...createTodoSlice(...a),
 				}),
 				{ name: "TodoStore" }
