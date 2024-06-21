@@ -41,7 +41,9 @@ function AddTodo() {
 						setIsChecked((prev) => !prev);
 					}}
 				>
-					{isChecked && <CheckIcon />}
+					{isChecked && (
+						<CheckIcon className=" [&>path]:stroke-light-darkGray [&>path]:dark:stroke-slate-50" />
+					)}
 				</div>
 				<Input
 					variant="unstyled"
